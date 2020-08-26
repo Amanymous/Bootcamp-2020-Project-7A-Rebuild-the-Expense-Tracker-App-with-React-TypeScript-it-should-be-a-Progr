@@ -1,10 +1,14 @@
 import React from 'react';
+import { Header } from './component/header';
+import { Balance } from './component/balance';
+
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <h1>Expense tracker with typesript</h1>
+      <Header />
+      <Balance />
     </div>
   );
 }
