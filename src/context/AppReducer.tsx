@@ -10,6 +10,7 @@ export default (
     case 'add':
       return {
         ...state,
+        transactions: [action.transaction, ...state.transactions],
       };
     default:
       return state;
