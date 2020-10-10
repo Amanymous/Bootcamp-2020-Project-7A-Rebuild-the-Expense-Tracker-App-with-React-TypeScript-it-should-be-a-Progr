@@ -1,27 +1,27 @@
-import React, { useState, useContext } from 'react';
-import { GlobalContext } from '../context/globalState';
+import React,{useState,useContext} from 'react';
+import { GlobalContext } from '../context/globalState'
 
-const AddTransaction = () => {
-  const [title, setTitle] = useState('');
-  const [amount, setAmount] = useState(0);
-  const { addTransaction } = useContext(GlobalContext);
+export const AddTransaction = () =>{
+  const [title,setTitle] = useState('')
+  const [amount,setAmount] = useState(0)
 
-  const onSubmit = (e: { preventDefault: () => void }) => {
-    e.preventDefault();
+  const { addTransaction } = useContext(GlobalContext)
+
+  const onSubmit = (e:{preventDefault:()=>void})=>{
+    e.preventDefault()
     const newTransaction = {
-      id: Math.floor(Math.random() * 100000000),
+      id:Math.floor(Math.random()*1000000),
       title,
-      amount: +amount,
-    };
-    addTransaction(newTransaction);
-  };
-
-  return (
-    <>
+      amount:+amount
+    }
+    addTransaction(newTransaction)
+  }
+  return(
+    <div>
       <h3>Add new transaction</h3>
       <form onSubmit={onSubmit}>
         <div className="form-control">
-          <label htmlFor="text">Text</label>
+          <label htmlFor="text">Title</label>
           <input
             type="text"
             value={title}
@@ -43,8 +43,6 @@ const AddTransaction = () => {
         </div>
         <button className="btn">Add transaction</button>
       </form>
-    </>
-  );
-};
-
-export default AddTransaction;
+    </div>
+  )
+}

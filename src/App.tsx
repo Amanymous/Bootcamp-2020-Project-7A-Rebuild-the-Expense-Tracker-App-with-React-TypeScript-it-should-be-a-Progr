@@ -1,25 +1,25 @@
 import React from 'react';
-import { Header } from './component/header';
-import { Balance } from './component/balance';
-import { IncomeExpenses } from './component/Income';
-import { TransactionList } from './component/TransactionList';
+import { Header } from './components/Header';
+import { Balance } from './components/balance';
+import { IncomeExpenses } from './components/Income';
+import { TransactionList } from './components/TransactionList';
 import { GlobalProvider } from './context/globalState';
-import AddTransaction from './component/AddTransaction';
+import {AddTransaction} from './components/AddTransaction';
 import { configureNotification } from './services/firebaseServices';
 import './App.css';
 
 function App() {
   return (
     <GlobalProvider>
-      <Header />
-      <div className="App">
-        <button onClick={configureNotification}>Configure Notification</button>
-        <Balance />
-        <IncomeExpenses />
-        <TransactionList />
-        <AddTransaction />
-      </div>
-    </GlobalProvider>
+    <Header />
+    <div className="App">
+      <button onClick={configureNotification}>Configure Notification</button>
+      <Balance />
+      <IncomeExpenses />
+      <TransactionList />
+      <AddTransaction />
+    </div>
+  </GlobalProvider>
   );
 }
 
